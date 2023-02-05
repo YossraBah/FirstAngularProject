@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-card *ngIf="assignmentTransmis">
+        <div>
+            <mat-card-title>{{assignmentTransmis.nom}}</mat-card-title>
+            <mat-card-subtitle>{{assignmentTransmis.date | date}}</mat-card-subtitle>
+            <div [ngClass]="{'card-style':true,'fixed':assignmentTransmis.rendu}">
+                <mat-checkbox *ngIf="!assignmentTransmis.rendu" (click)="onAssignmentRendu()">Assignment Rendu</mat-checkbox>
+                <div [ngClass]="{'fixed':assignmentTransmis.rendu}">
+                    <button  mat-mini-fab color="accent" type="button" class="edit-btn" (click)="onEdit()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button  mat-mini-fab color="accent" type="submit" (click)="onDelete()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

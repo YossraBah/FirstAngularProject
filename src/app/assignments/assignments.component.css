@@ -1,0 +1,14 @@
+.nonrendu{
+    color: white;
+    background-color: #f79bb9;
+    padding: 5px;
+}
+
+.center{
+    display: flex;
+    margin: 40px 0;
+   justify-content: center;
+}
+a{
+    text-decoration: none;
+}

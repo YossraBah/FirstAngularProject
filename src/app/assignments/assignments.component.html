@@ -1,0 +1,25 @@
+<div [ngClass]="{'center': true}">
+<button mat-flat-button color="accent"><a routerLink="assignments/add">Ajouter un assignment</a></button>
+</div>
+
+<!-- <app-add-assignment (nouvelAssignment)="onNouvelassignment($event)"></app-add-assignment> -->
+
+
+<mat-list *ngFor="let assignment of assignments">
+  <nav>
+    <a routerLink='assignment/{{assignment.id}}'>
+      <h3 mat-subheader>{{assignment.date | date}}</h3>
+      <mat-list-item> 
+        <p appRendu *ngIf="assignment.rendu; else nonassignment">
+        compte rendu soumis :{{assignment.nom}}.
+        </p>
+        <ng-template #nonassignment>
+            <p [ngClass]="{'nonrendu': !assignment.rendu}">compte non rendu :{{assignment.nom}}.</p>
+        </ng-template>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+    </a>
+  </nav>
+</mat-list>
+<!-- <app-assignment-detail [assignmentTransmis]="assignmentSelectionne"></app-assignment-detail> -->
+

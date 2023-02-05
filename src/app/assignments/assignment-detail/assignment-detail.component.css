@@ -1,0 +1,13 @@
+.card-style{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+.fixed{
+    display: flex;
+    justify-content:flex-end;
+}
+.edit-btn{
+    margin-right: 20px;
+}

@@ -1,0 +1,17 @@
+<div *ngIf="assignment">
+<form class="example-form" #formid >
+    <mat-form-field class="example-full-width">
+        <mat-label>Nom de devoir</mat-label>
+            <input matInput placeholder="TP1 Angular" [(ngModel)]="assignment.nom" name="nom">
+            </mat-form-field>
+        
+            <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="picker" placeholder="Choisir une date" [(ngModel)]="assignment.date" name="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div [ngClass]="{'center':true}" >
+        <button type="button" mat-flat-button color="accent"  (click)="onUpdate()">Modifier</button>
+    </div>
+</form>
+</div>
